@@ -14,12 +14,6 @@
     </form>
 </mat-card>
 
-<!-- <div class="song-list">
-    <ul *ngIf="songList">
-        <li *ngFor="let song of songList">{{ song.name }} - {{ song.language }}</li>
-    </ul>
-</div> -->
-
 <mat-card class="song-list">
     <table mat-table [dataSource]="songList" *ngIf="songList" style="width: 100%">
         <ng-container matColumnDef="name">
@@ -30,6 +24,15 @@
         <ng-container matColumnDef="language">
             <th mat-header-cell *matHeaderCellDef>Song Language</th>
             <td mat-cell *matCellDef="let song">{{ song.language }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="delete">
+            <th mat-header-cell *matHeaderCellDef></th>
+            <td mat-cell *matCellDef="let song">
+                <a class="delete-icon" (click)="onDelete(song)">
+                    <i class="material-icons">delete</i>
+                </a>
+            </td>
         </ng-container>
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

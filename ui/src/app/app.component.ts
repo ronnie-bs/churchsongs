@@ -10,7 +10,7 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 export class AppComponent implements OnInit {
     songList: any[] = null;
     songInputForm: FormGroup;
-    displayedColumns: string[] = ['name', 'language'];
+    displayedColumns: string[] = ['name', 'language', 'delete'];
 
     constructor(
         private http: HttpClient,
@@ -37,6 +37,13 @@ export class AppComponent implements OnInit {
 
         const url = 'http://localhost:3000/songs';
         this.http.post(url, newSong).subscribe((res: any[]) => {
+            this.songList = res;
+        });
+    }
+
+    onDelete(song: any) {
+        const url = `http://localhost:3000/songs/${song._id}`;
+        this.http.delete(url).subscribe((res: any[]) => {
             this.songList = res;
         });
     }
