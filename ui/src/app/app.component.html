@@ -1,0 +1,15 @@
+<h1>Church Song List</h1>
+
+<div class="new-songs">
+    <form [formGroup]="songInputForm" (ngSubmit)="onSubmit(songInputForm)">
+        <input formControlName="name" placeholder="Song Name">
+        <input formControlName="language" placeholder="Song Language">
+        <button type="submit">Add Song</button>
+    </form>
+</div>
+
+<div class="song-list">
+    <ul *ngIf="songList">
+        <li *ngFor="let song of songList">{{ song.name }} - {{ song.language }}</li>
+    </ul>
+</div>

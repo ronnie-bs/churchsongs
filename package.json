@@ -1,0 +1,17 @@
+{
+  "name": "churchsongs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "ng": "ng",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@angular/cli": "^7.3.9"
+  },
+  "dependencies": {}
+}
