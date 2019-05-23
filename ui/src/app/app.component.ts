@@ -10,6 +10,7 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 export class AppComponent implements OnInit {
     songList: any[] = null;
     songInputForm: FormGroup;
+    displayedColumns: string[] = ['name', 'language'];
 
     constructor(
         private http: HttpClient,
